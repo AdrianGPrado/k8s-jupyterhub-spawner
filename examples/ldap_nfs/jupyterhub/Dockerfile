@@ -1,7 +1,8 @@
 FROM jupyterhub/jupyterhub
 
 RUN apt-get update && apt-get install -y curl
-RUN pip install jupyterhub-ldapauthenticator
+RUN pip install jupyterhub-ldapauthenticator \
+                jupyterhub-dummyauthenticator
 RUN pip install git+git://github.com/danielfrg/jupyterhub-kubernetes_spawner.git@0.1.1
 
 USER root
